@@ -28,4 +28,4 @@ Use court data to find the case that matches these anonymized records. In practi
 
 ## The Result
 
-Matching up these records will make it possible for the ACLU of Virginia to (TK).
+Matching up these records will make it possible for the ACLU of Virginia to determine whether criminal defendants in Virginia are being denied their constitutional right to counsel.
