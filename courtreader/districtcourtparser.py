@@ -31,9 +31,14 @@ def parse_hearing_date_search(soup):
             cells = row.find_all('td')
             if cells[0]['class'][0] == 'gridheader':
                 continue
+            details_url = cells[1].a['href']
+            status_cell_content = list(cells[6].stripped_strings)
+            status = ''
+            if len(status_cell_content) > 0:
+                status = status_cell_content[0]
             cases.append({
-                'details_url': cells[1].a['href'],
-                'status': list(cells[6].stripped_strings)[0]
+                'details_url': details_url,
+                'status': status
             })
         return cases
     except:
