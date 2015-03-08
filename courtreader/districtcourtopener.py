@@ -68,7 +68,13 @@ class DistrictCourtOpener:
         data = urllib.urlencode(data)
         url = self.url('caseSearch.do')
         page = self.opener.open(url, data)
-        return BeautifulSoup(page.read())
+        content = ''
+        for line in page:
+            if '<a href="caseSearch.do?formAction=caseDetails' in line:
+                line = line.replace('/>', '>')
+            content += line
+        soup = BeautifulSoup(content)
+        return soup
     
     def open_case_details(self, case):
         url = self.url(case['details_url'])

@@ -1,6 +1,6 @@
 
-cookie
-
 *.pyc
-
+venv*
+cookie
 unexpected_output.html
+
