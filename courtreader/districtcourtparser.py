@@ -25,6 +25,9 @@ def parse_court_names(soup):
 
 def parse_hearing_date_search(soup):
     try:
+        no_results = re.compile(r'No results found for the search criteria')
+        if soup.find('td', text=no_results) is not None:
+            return []
         cases = []
         rows = soup.find('table', {'class':'tableborder'}).find_all('tr')
         for row in rows:
