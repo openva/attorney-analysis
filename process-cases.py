@@ -62,7 +62,7 @@ def cases_match(partial_case, case_details):
 reader = readers.DistrictCourtReader()
 reader.connect()
 
-case_year = '2012'
+case_year = '2011'
 partial_cases_file_path = 'cases/' + case_year + '.csv'
 matched_cases_file_path = 'cases/' + case_year + '_matched.csv'
 
